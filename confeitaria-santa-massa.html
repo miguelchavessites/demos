@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Confeitaria Santa Massa – Padaria e confeitaria em Ermesinde</title>
+<meta name="description" content="Confeitaria Santa Massa, padaria e confeitaria em Ermesinde. Encomendas de bolos, pão quente e salgados.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..800,100&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rosa:#F6E3DE;        /* caixa de pastelaria */
+  --rosa-forte:#E9C3BA;
+  --chocolate:#4A2C21;
+  --chocolate-2:#6B4436;
+  --cereja:#A8323E;      /* acento: botões */
+  --cereja-esc:#87262F;
+  --manteiga:#F3D27A;
+  --leite:#FFFAF7;
+  --display:'Fraunces', Georgia, serif;
+  --texto:'Nunito', 'Trebuchet MS', sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;font-family:var(--texto);color:var(--chocolate);background:var(--leite);font-size:17px;line-height:1.65}
+a{color:var(--cereja)}
+a:focus-visible{outline:3px solid var(--chocolate);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);font-variation-settings:"SOFT" 100;color:var(--chocolate);text-wrap:balance}
+
+.demo{background:var(--chocolate);color:#fff;font-size:14px;text-align:center;padding:10px 16px;line-height:1.4}
+.demo strong{color:var(--manteiga)}
+
+/* toalhinha rendada: borda recortada entre secções */
+.renda{height:22px;background:
+  radial-gradient(circle at 14px 0, transparent 13px, var(--fundo-seg) 13.5px) 0 0/28px 22px repeat-x;}
+.renda.de-rosa{--fundo-seg:var(--rosa);background-color:var(--leite)}
+.renda.de-leite{--fundo-seg:var(--leite);background-color:var(--rosa)}
+
+/* cabeçalho + hero em fundo rosa */
+.topo-hero{background:var(--rosa)}
+.topo{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0}
+.marca{font-family:var(--display);font-variation-settings:"SOFT" 100;font-weight:700;font-size:24px;color:var(--chocolate);text-decoration:none}
+.topo nav{display:flex;gap:24px;font-weight:600;font-size:15px}
+.topo nav a{color:var(--chocolate-2);text-decoration:none}
+.topo nav a:hover{color:var(--cereja)}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:24px 0 56px}
+.hero h1{font-weight:700;font-size:clamp(40px,5.6vw,66px);line-height:1.05;letter-spacing:-.015em;margin:0 0 20px}
+.hero .lead{font-size:20px;color:var(--chocolate-2);max-width:34ch;margin:0 0 30px}
+.acoes{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:700;font-size:17px;text-decoration:none;border:2px solid var(--cereja)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-wa{background:var(--cereja);color:#fff}
+.btn-wa:hover{background:var(--cereja-esc);border-color:var(--cereja-esc)}
+.btn-tel{background:transparent;color:var(--cereja)}
+.btn-tel:hover{background:rgba(168,50,62,.08)}
+.prova{margin-top:26px;font-size:15px;color:var(--chocolate-2)}
+.prova b{font-family:var(--display);font-size:22px;color:var(--chocolate);font-weight:700}
+.estrelas{color:#B07A12;letter-spacing:2px}
+
+/* o elemento marcante: um bolo numa toalhinha rendada, em CSS */
+.prato{position:relative;aspect-ratio:1;max-width:440px;margin-left:auto;width:100%}
+.doily{position:absolute;inset:0;border-radius:50%;
+  background:
+    radial-gradient(circle, var(--leite) 0 62%, transparent 62.5%),
+    repeating-conic-gradient(var(--leite) 0 5deg, transparent 5deg 10deg);
+  -webkit-mask:radial-gradient(circle, #000 0 70%, transparent 70.5%);
+          mask:radial-gradient(circle, #000 0 70%, transparent 70.5%)}
+.doily::after{content:"";position:absolute;inset:14%;border-radius:50%;border:2px dotted var(--rosa-forte)}
+.bolo{position:absolute;left:50%;top:50%;width:46%;transform:translate(-50%,-46%)}
+.etiqueta{position:absolute;right:0;bottom:6%;background:#fff;border-radius:18px;padding:16px 20px;max-width:230px;box-shadow:0 12px 28px rgba(74,44,33,.16);transform:rotate(-3deg)}
+.etiqueta strong{display:block;font-family:var(--display);font-variation-settings:"SOFT" 100;font-size:19px;line-height:1.2;margin-bottom:4px}
+.etiqueta span{font-size:14px;color:var(--chocolate-2)}
+
+section{padding:72px 0}
+.sec-rosa{background:var(--rosa)}
+h2{font-weight:700;font-size:clamp(32px,4vw,44px);line-height:1.1;margin:0 0 12px}
+.intro{color:var(--chocolate-2);max-width:54ch;margin:0 0 40px;font-size:18px}
+
+/* montra como ardósia de preços de pastelaria */
+.montra{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px}
+.item{display:flex;gap:18px;padding:22px 0;border-bottom:2px dotted var(--rosa-forte)}
+.item .pinta{flex:none;width:14px;height:14px;margin-top:9px;border-radius:50%;background:var(--manteiga);box-shadow:0 0 0 4px rgba(243,210,122,.35)}
+.item h3{font-weight:650;font-size:22px;margin:0 0 4px}
+.item p{margin:0;color:var(--chocolate-2);font-size:16px}
+
+.passos{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:p;margin:0;padding:0;list-style:none}
+.passos li{counter-increment:p;background:#fff;border-radius:24px;padding:28px 26px}
+.passos li::before{content:counter(p);display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:var(--rosa);color:var(--cereja);font-family:var(--display);font-weight:800;font-size:22px;margin-bottom:14px}
+.passos h3{font-weight:650;font-size:21px;margin:0 0 6px}
+.passos p{margin:0;color:var(--chocolate-2)}
+.cta-enc{margin-top:36px}
+
+.visita{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.dados dt{font-weight:700;margin-top:16px}
+.dados dd{margin:2px 0 0;color:var(--chocolate-2)}
+.mapa{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:260px;border-radius:32px;padding:28px;background:var(--chocolate);color:#fff;text-decoration:none;
+  background-image:radial-gradient(rgba(255,255,255,.10) 1.5px,transparent 1.5px);background-size:18px 18px}
+.mapa span{font-family:var(--display);font-variation-settings:"SOFT" 100;font-weight:700;font-size:26px}
+.mapa small{font-size:15px;opacity:.9;margin-top:6px}
+.mapa:hover{background-color:var(--chocolate-2)}
+
+footer{background:var(--chocolate);color:#EAD9D3;padding:32px 0;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+.barra{display:none}
+@media (max-width:860px){
+  .topo nav{display:none}
+  .hero{grid-template-columns:1fr;gap:28px;padding-top:8px}
+  .prato{max-width:320px;margin:0 auto}
+  .montra{grid-template-columns:1fr}
+  .passos{grid-template-columns:1fr}
+  .visita{grid-template-columns:1fr}
+  section{padding:56px 0}
+  .barra{display:flex;position:fixed;left:12px;right:12px;bottom:12px;gap:8px;z-index:10}
+  .barra .btn{flex:1;justify-content:center;box-shadow:0 6px 18px rgba(74,44,33,.25)}
+  .barra .btn-tel{background:#fff}
+  body{padding-bottom:84px}
+}
+</style>
+</head>
+<body>
+
+<div class="demo" role="note">Demonstração preparada por <strong>Miguel Chaves</strong> para Confeitaria Santa Massa. Não é o site oficial.</div>
+
+<div class="topo-hero">
+  <div class="wrap">
+    <header class="topo">
+      <a class="marca" href="#">Confeitaria Santa Massa</a>
+      <nav aria-label="Principal">
+        <a href="#montra">O que fazemos</a>
+        <a href="#encomendas">Encomendas</a>
+        <a href="#visita">Onde estamos</a>
+      </nav>
+    </header>
+    <main class="hero">
+      <div>
+        <h1>Bolos, pão quente e salgados, feitos todos os dias em Ermesinde.</h1>
+        <p class="lead">Passe pela loja ou encomende o bolo da sua festa sem sair de casa.</p>
+        <div class="acoes">
+          <a class="btn btn-wa" href="https://wa.me/351914910301?text=Ol%C3%A1%20Confeitaria%20Santa%20Massa%2C%20gostava%20de%20fazer%20uma%20encomenda.">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+            Encomendar pelo WhatsApp
+          </a>
+          <a class="btn btn-tel" href="tel:+351914910301">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            Ligar 914 910 301
+          </a>
+        </div>
+        <p class="prova"><b>4,3</b> <span class="estrelas" aria-hidden="true">★★★★★</span> com 588 avaliações no Google</p>
+      </div>
+      <div class="prato">
+        <div class="doily" aria-hidden="true"></div>
+        <svg class="bolo" viewBox="0 0 200 190" role="img" aria-label="Ilustração de um bolo com cereja">
+          <ellipse cx="100" cy="172" rx="92" ry="14" fill="#E9C3BA"/>
+          <path d="M22 96 h156 v66 a14 14 0 0 1 -14 14 h-128 a14 14 0 0 1 -14 -14z" fill="#6B4436"/>
+          <rect x="22" y="128" width="156" height="12" fill="#F3D27A"/>
+          <path stroke="#E9C3BA" stroke-width="2" d="M18 92 q10 22 20 0 q10 22 20 0 q10 22 20 0 q10 22 20 0 q10 22 20 0 q10 22 20 0 q10 22 20 0 q10 22 20 0 q8 18 6 4 v-14 h-164z" fill="#FFFAF7"/>
+          <rect x="18" y="74" width="164" height="22" rx="11" fill="#FFFFFF" stroke="#E9C3BA" stroke-width="2"/>
+          <path d="M100 48 q-4 -22 14 -34" stroke="#4A2C21" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <circle cx="100" cy="60" r="16" fill="#A8323E"/>
+          <circle cx="94" cy="54" r="4" fill="#fff" opacity=".6"/>
+        </svg>
+        <div class="etiqueta"><strong>Bolos de aniversário por encomenda</strong><span>Diga-nos o sabor e o dia. Nós tratamos do resto.</span></div>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="renda de-rosa" aria-hidden="true"></div>
+
+<section id="montra">
+  <div class="wrap">
+    <h2>O que sai do nosso forno</h2>
+    <p class="intro">Um exemplo de como a vossa montra pode aparecer aqui, com fotografias e os vossos produtos reais.</p>
+    <div class="montra">
+      <div class="item"><span class="pinta" aria-hidden="true"></span><div><h3>Bolos de aniversário</h3><p>Por encomenda, com o sabor, o tamanho e a decoração que escolher.</p></div></div>
+      <div class="item"><span class="pinta" aria-hidden="true"></span><div><h3>Pastelaria fina</h3><p>Pastéis de nata, croissants e os bolos de sempre, acabados de fazer.</p></div></div>
+      <div class="item"><span class="pinta" aria-hidden="true"></span><div><h3>Pão quente</h3><p>Pão fresco ao longo do dia, para levar para casa.</p></div></div>
+      <div class="item"><span class="pinta" aria-hidden="true"></span><div><h3>Salgados</h3><p>Rissóis, croquetes e bolinhos de bacalhau, também para festas.</p></div></div>
+      <div class="item"><span class="pinta" aria-hidden="true"></span><div><h3>Doces para festas</h3><p>Bandejas de doces e salgados para aniversários e batizados.</p></div></div>
+      <div class="item"><span class="pinta" aria-hidden="true"></span><div><h3>Pequeno-almoço e lanche</h3><p>Um café e um bolo, sentado ou ao balcão.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="renda de-leite" aria-hidden="true" style="transform:scaleY(-1)"></div>
+<section id="encomendas" class="sec-rosa">
+  <div class="wrap">
+    <h2>Encomendar um bolo é simples</h2>
+    <p class="intro">Para aniversários, batizados ou só porque sim. Diga-nos o que quer e nós tratamos do resto.</p>
+    <ol class="passos">
+      <li><h3>Escolha o bolo</h3><p>Diga-nos o sabor, o tamanho e se quer alguma decoração ou mensagem.</p></li>
+      <li><h3>Marque o dia</h3><p>Combine connosco a data e a hora a que quer levantar. Pedimos alguns dias de antecedência.</p></li>
+      <li><h3>Levante na loja</h3><p>O bolo fica pronto à sua espera, fresco, no dia combinado.</p></li>
+    </ol>
+    <div class="cta-enc"><a class="btn btn-wa" href="https://wa.me/351914910301?text=Ol%C3%A1%20Confeitaria%20Santa%20Massa%2C%20gostava%20de%20encomendar%20um%20bolo%20para%20o%20dia%20...">Encomendar um bolo pelo WhatsApp</a></div>
+  </div>
+</section>
+<div class="renda de-rosa" aria-hidden="true"></div>
+
+<section id="visita">
+  <div class="wrap visita">
+    <div>
+      <h2>Venha visitar-nos</h2>
+      <dl class="dados">
+        <dt>Morada</dt><dd>R. Prof. Correia de Sá 38, 4445-416 Ermesinde</dd>
+        <dt>Telefone</dt><dd><a href="tel:+351914910301">914 910 301</a></dd>
+        <dt>Horário</dt><dd>A confirmar com a confeitaria</dd>
+      </dl>
+    </div>
+    <a class="mapa" href="https://www.google.com/maps/search/?api=1&amp;query=Confeitaria%20Santa%20Massa%2C%20R.%20Prof.%20Correia%20de%20S%C3%A1%2038%2C%204445-416%20Ermesinde" target="_blank" rel="noopener">
+      <span>Ver no Google Maps</span>
+      <small>R. Prof. Correia de Sá 38, Ermesinde</small>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Confeitaria Santa Massa</span>
+    <span>Site de demonstração por Miguel Chaves</span>
+  </div>
+</footer>
+
+<div class="barra">
+  <a class="btn btn-wa" href="https://wa.me/351914910301?text=Ol%C3%A1%20Confeitaria%20Santa%20Massa%2C%20gostava%20de%20fazer%20uma%20encomenda.">WhatsApp</a>
+  <a class="btn btn-tel" href="tel:+351914910301">Ligar</a>
+</div>
+
+</body>
+</html>
