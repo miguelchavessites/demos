@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Urbanstudio – Ginásio em Ermesinde</title>
+<meta name="description" content="Urbanstudio, ginásio em Ermesinde. Horário das aulas, planos e aula experimental.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,100,400;0,100,600;0,125,800;1,125,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cobalto:#1F3FE0;
+  --cobalto-esc:#1730B4;
+  --tangerina:#FF7A33;      /* ação principal, com texto escuro */
+  --tangerina-esc:#F0621A;
+  --tinta:#10152B;
+  --suave:#525A75;
+  --papel:#F4F5FA;
+  --branco:#FFFFFF;
+  --linha:#D5D9E8;
+  --fonte:'Archivo', Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;font-family:var(--fonte);color:var(--tinta);background:var(--papel);font-size:17px;line-height:1.55}
+a{color:var(--cobalto)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--tangerina);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+h1,h2,h3{margin:0;text-wrap:balance}
+.forte{font-stretch:125%;font-weight:800;font-style:italic;letter-spacing:-.01em;line-height:.98}
+
+.demo{background:var(--tinta);color:#fff;font-size:14px;text-align:center;padding:10px 16px;line-height:1.4}
+.demo strong{color:var(--tangerina)}
+
+/* topo */
+.cima{background:var(--cobalto);color:#fff;position:relative;overflow:hidden}
+.cima::after{content:"";position:absolute;right:-12%;top:-30%;width:46%;height:170%;background:var(--cobalto-esc);transform:skewX(-14deg)}
+.cima .wrap{position:relative;z-index:1}
+.topo{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0}
+.marca{font-stretch:125%;font-weight:800;font-style:italic;font-size:24px;color:#fff;text-decoration:none}
+.topo nav{display:flex;gap:26px;font-weight:600;font-size:15px}
+.topo nav a{color:#fff;text-decoration:none}
+.topo nav a:hover{text-decoration:underline}
+
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center;padding:36px 0 84px}
+.hero h1{font-size:clamp(44px,7.2vw,96px)}
+.hero .lead{font-size:20px;max-width:36ch;margin:22px 0 30px;opacity:.92}
+.acoes{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 28px;border-radius:6px;font-weight:800;font-stretch:112%;font-size:17px;text-decoration:none;border:2px solid transparent}
+.btn-1{background:var(--tangerina);color:var(--tinta)}
+.btn-1:hover{background:var(--tangerina-esc)}
+.btn-2{border-color:currentColor;color:#fff}
+.btn-2:hover{background:rgba(255,255,255,.14)}
+.prova{margin:26px 0 0;font-size:15px;opacity:.92}
+.prova b{font-size:20px}
+
+/* bilhete da aula experimental */
+.bilhete{background:var(--branco);color:var(--tinta);border-radius:14px;padding:28px 26px;position:relative;transform:rotate(2deg);
+  -webkit-mask:radial-gradient(circle 12px at 0 68%,transparent 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 12px at 100% 68%,transparent 98%,#000) right/51% 100% no-repeat;
+          mask:radial-gradient(circle 12px at 0 68%,transparent 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 12px at 100% 68%,transparent 98%,#000) right/51% 100% no-repeat}
+.bilhete h2{font-size:30px;margin-bottom:10px}
+.bilhete p{margin:0;color:var(--suave);font-size:16px}
+.bilhete .corte{border-top:2px dashed var(--linha);margin:22px -26px 18px}
+.bilhete .passo{display:flex;gap:10px;font-weight:600;font-size:15px;margin-top:8px}
+.bilhete .passo span{color:var(--cobalto);font-weight:800}
+
+section{padding:80px 0}
+.sec-branca{background:var(--branco)}
+h2.titulo{font-size:clamp(34px,4.6vw,56px);margin-bottom:12px}
+.intro{color:var(--suave);max-width:56ch;margin:0 0 36px;font-size:18px}
+
+/* horário das aulas: o elemento central */
+.quadro{overflow-x:auto;border:2px solid var(--tinta);border-radius:12px;background:var(--branco)}
+.quadro:focus-visible{outline:3px solid var(--tangerina)}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px}
+caption{text-align:left;padding:14px 18px;color:var(--suave);font-size:14px;caption-side:bottom;border-top:1px solid var(--linha)}
+th,td{padding:10px 10px;text-align:left;vertical-align:top;border-bottom:1px solid var(--linha)}
+thead th{background:var(--tinta);color:#fff;font-stretch:112%;font-weight:800;font-size:14px;padding:12px 10px}
+tbody th{font-weight:800;white-space:nowrap;width:74px;color:var(--suave)}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:none}
+.aula{display:block;border-radius:6px;padding:7px 9px;font-weight:600;line-height:1.25;border-left:5px solid}
+.a1{background:#E7ECFF;border-color:var(--cobalto)}
+.a2{background:#FFEADD;border-color:var(--tangerina-esc)}
+.a3{background:#E4F4EC;border-color:#1E8A55}
+.a4{background:#F3E8FB;border-color:#7A3DB8}
+
+/* modalidades */
+.modalidades{display:grid;grid-template-columns:repeat(3,1fr);gap:0 40px;list-style:none;margin:0;padding:0}
+.modalidades li{padding:20px 0;border-top:2px solid var(--tinta)}
+.modalidades h3{font-size:21px;font-weight:800;font-stretch:112%;margin-bottom:4px}
+.modalidades p{margin:0;color:var(--suave);font-size:16px}
+
+/* planos */
+.planos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.plano{background:var(--branco);border:2px solid var(--linha);border-radius:12px;padding:26px 24px;display:flex;flex-direction:column;gap:8px}
+.plano.destaque{border-color:var(--cobalto);box-shadow:8px 8px 0 var(--cobalto)}
+.plano h3{font-size:22px;font-weight:800;font-stretch:112%}
+.plano .preco{font-size:40px}
+.plano .preco small{font-size:16px;font-weight:600;font-style:normal;font-stretch:100%;color:var(--suave)}
+.plano p{margin:0;color:var(--suave);font-size:16px}
+
+.faixa{background:var(--tangerina);color:var(--tinta);padding:56px 0}
+.faixa .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+.faixa h2{font-size:clamp(30px,4vw,48px);max-width:16ch}
+.faixa .btn-1{background:var(--tinta);color:#fff}
+.faixa .btn-1:hover{background:#000}
+.faixa .btn-2{color:var(--tinta)}
+.faixa .btn-2:hover{background:rgba(16,21,43,.1)}
+
+.visita{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.dados dt{font-weight:800;margin-top:16px}
+.dados dd{margin:2px 0 0;color:var(--suave)}
+.mapa{display:flex;flex-direction:column;justify-content:flex-end;min-height:240px;border-radius:12px;padding:26px;background:var(--cobalto);color:#fff;text-decoration:none;
+  background-image:repeating-linear-gradient(104deg,transparent 0 46px,rgba(255,255,255,.10) 46px 50px)}
+.mapa span{font-size:30px}
+.mapa small{font-size:15px;opacity:.92;margin-top:6px}
+.mapa:hover{background-color:var(--cobalto-esc)}
+
+footer{background:var(--tinta);color:#C5CADB;padding:30px 0;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+.barra{display:none}
+@media (max-width:860px){
+  .topo nav{display:none}
+  .cima::after{display:none}
+  .hero{grid-template-columns:1fr;gap:36px;padding:12px 0 60px}
+  .bilhete{transform:none}
+  .modalidades{grid-template-columns:1fr}
+  .planos{grid-template-columns:1fr}
+  .visita{grid-template-columns:1fr}
+  section{padding:56px 0}
+  .barra{display:flex;position:fixed;left:12px;right:12px;bottom:12px;gap:8px;z-index:10}
+  .barra .btn{flex:1;box-shadow:0 6px 18px rgba(16,21,43,.3)}
+  .barra .btn-2{background:var(--branco);color:var(--tinta);border-color:var(--tinta)}
+  body{padding-bottom:88px}
+}
+</style>
+</head>
+<body>
+
+<div class="demo" role="note">Demonstração preparada por <strong>Miguel Chaves</strong> para Urbanstudio. Não é o site oficial.</div>
+
+<div class="cima">
+  <div class="wrap">
+    <header class="topo">
+      <a class="marca" href="#">Urbanstudio</a>
+      <nav aria-label="Principal">
+        <a href="#horario">Horário</a>
+        <a href="#modalidades">Modalidades</a>
+        <a href="#planos">Planos</a>
+        <a href="#visita">Onde estamos</a>
+      </nav>
+    </header>
+    <main class="hero">
+      <div>
+        <h1 class="forte">O seu treino, no centro de Ermesinde.</h1>
+        <p class="lead">Aulas de grupo e treino acompanhado, num espaço perto de casa e do trabalho.</p>
+        <div class="acoes"><a class="btn btn-1" href="tel:+351229711880">Ligar para marcar aula: 22 971 1880</a></div>
+        <p class="prova"><b>4,8 ★</b> no Google, com 59 avaliações de quem treina cá</p>
+      </div>
+      <aside class="bilhete" aria-label="Aula experimental">
+        <h2 class="forte">Aula experimental</h2>
+        <p>Venha experimentar um treino e conhecer o espaço antes de se inscrever.</p>
+        <div class="corte" aria-hidden="true"></div>
+        <div class="passo"><span>1</span> Escolha uma aula no horário</div>
+        <div class="passo"><span>2</span> Diga-nos o dia que lhe dá jeito</div>
+        <div class="passo"><span>3</span> Apareça com roupa de treino</div>
+      </aside>
+    </main>
+  </div>
+</div>
+
+<section id="horario" class="sec-branca">
+  <div class="wrap">
+    <h2 class="titulo forte">Horário das aulas</h2>
+    <p class="intro">Quem procura um ginásio quer saber primeiro quando pode treinar. Aqui entra o vosso horário real, sempre atualizado.</p>
+    <div class="quadro" tabindex="0" role="region" aria-label="Horário semanal das aulas">
+      <table>
+        <caption>Exemplo de horário. No telemóvel, deslize para o lado para ver a semana toda.</caption>
+        <thead><tr><th scope="col">Hora</th><th scope="col">Segunda</th><th scope="col">Terça</th><th scope="col">Quarta</th><th scope="col">Quinta</th><th scope="col">Sexta</th><th scope="col">Sábado</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">07:30</th><td><span class="aula a1">Funcional</span></td><td></td><td><span class="aula a1">Funcional</span></td><td></td><td><span class="aula a1">Funcional</span></td><td></td></tr>
+          <tr><th scope="row">10:00</th><td><span class="aula a3">Pilates</span></td><td><span class="aula a4">Mobilidade</span></td><td><span class="aula a3">Pilates</span></td><td><span class="aula a4">Mobilidade</span></td><td><span class="aula a3">Pilates</span></td><td><span class="aula a2">HIIT</span></td></tr>
+          <tr><th scope="row">18:30</th><td><span class="aula a2">HIIT</span></td><td><span class="aula a1">Funcional</span></td><td><span class="aula a2">HIIT</span></td><td><span class="aula a1">Funcional</span></td><td><span class="aula a2">HIIT</span></td><td></td></tr>
+          <tr><th scope="row">19:30</th><td><span class="aula a1">Funcional</span></td><td><span class="aula a3">Pilates</span></td><td><span class="aula a1">Funcional</span></td><td><span class="aula a3">Pilates</span></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="modalidades">
+  <div class="wrap">
+    <h2 class="titulo forte">O que pode treinar aqui</h2>
+    <p class="intro">Um exemplo de como apresentar as vossas modalidades.</p>
+    <ul class="modalidades">
+      <li><h3>Treino funcional</h3><p>Força e resistência com o peso do corpo e material simples.</p></li>
+      <li><h3>HIIT</h3><p>Treinos curtos e intensos, para gastar muito em pouco tempo.</p></li>
+      <li><h3>Pilates</h3><p>Postura, core e flexibilidade, ao seu ritmo.</p></li>
+      <li><h3>Mobilidade</h3><p>Para soltar o corpo e prevenir lesões.</p></li>
+      <li><h3>Treino personalizado</h3><p>Sessões individuais com plano feito à medida.</p></li>
+      <li><h3>Acompanhamento</h3><p>Avaliação inicial e objetivos definidos consigo.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section id="planos" class="sec-branca">
+  <div class="wrap">
+    <h2 class="titulo forte">Planos e preços</h2>
+    <p class="intro">Um exemplo de como mostrar os vossos planos, com o preço e o que cada um inclui.</p>
+    <div class="planos">
+      <div class="plano"><h3>2 treinos por semana</h3><div class="preco forte">__ € <small>/mês</small></div><p>Para quem está a começar ou tem pouco tempo.</p></div>
+      <div class="plano destaque"><h3>Livre-trânsito</h3><div class="preco forte">__ € <small>/mês</small></div><p>Todas as aulas, as vezes que quiser.</p></div>
+      <div class="plano"><h3>Treino personalizado</h3><div class="preco forte">__ € <small>/sessão</small></div><p>Um treinador só para si, com plano à medida.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="faixa">
+  <div class="wrap">
+    <h2 class="forte">O primeiro treino é o mais difícil. Marque-o já.</h2>
+    <div class="acoes"><a class="btn btn-1" href="tel:+351229711880">Ligar para marcar aula: 22 971 1880</a></div>
+  </div>
+</div>
+
+<section id="visita">
+  <div class="wrap visita">
+    <div>
+      <h2 class="titulo forte">Onde estamos</h2>
+      <dl class="dados">
+        <dt>Morada</dt><dd>R. José Joaquim Ribeiro Teles 218 F, 4445-485 Ermesinde</dd>
+        <dt>Telefone</dt><dd><a href="tel:+351229711880">22 971 1880</a></dd>
+        <dt>Horário</dt><dd>A confirmar com o ginásio</dd>
+      </dl>
+    </div>
+    <a class="mapa" href="https://www.google.com/maps/search/?api=1&amp;query=Urbanstudio%2C%20R.%20Jos%C3%A9%20Joaquim%20Ribeiro%20Teles%20218%20F%2C%204445-485%20Ermesinde" target="_blank" rel="noopener">
+      <span class="forte">Ver no Google Maps</span>
+      <small>R. José Joaquim Ribeiro Teles 218 F</small>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Urbanstudio</span>
+    <span>Site de demonstração por Miguel Chaves</span>
+  </div>
+</footer>
+
+<div class="barra"><a class="btn btn-1" href="tel:+351229711880">Ligar para marcar aula</a></div>
+
+</body>
+</html>
