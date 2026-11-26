@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>MCARAUTO – Oficina de mecânica e eletrónica em Ermesinde</title>
+<meta name="description" content="MCARAUTO, oficina de mecânica e eletrónica automóvel em Ermesinde. Peça orçamento pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fundo-hero:#15171B;      /* cor forte do topo */
+  --sobre-hero:#F1F5F9;     /* texto sobre a cor forte */
+  --papel:#F6F8FA;
+  --tinta:#0F1C2A;
+  --suave:#4E5D6C;          /* texto secundário */
+  --acento:#C8202A;        /* botões */
+  --acento-esc:#A3171F;
+  --linha:#CBD5DF;
+  --display:'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --texto:'Instrument Sans', Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--texto);color:var(--tinta);background:var(--papel);font-size:17px;line-height:1.6}
+a{color:var(--acento)}
+a:focus-visible{outline:3px solid var(--acento);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+
+.demo{background:#111820;color:#fff;font-size:14px;text-align:center;padding:10px 16px;line-height:1.4}
+.demo strong{color:#F3D27A}
+
+/* topo */
+.cima{background:var(--fundo-hero);color:var(--sobre-hero)}
+.topo{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0}
+.marca{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:.01em;color:var(--sobre-hero);text-decoration:none}
+.topo nav{display:flex;gap:24px;font-weight:500;font-size:15px}
+.topo nav a{color:var(--sobre-hero);opacity:.85;text-decoration:none}
+.topo nav a:hover{opacity:1;text-decoration:underline}
+
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;padding:32px 0 72px}
+.hero h1{font-weight:700;font-size:clamp(48px,7vw,92px);line-height:.98;letter-spacing:0;margin-bottom:20px}
+.hero .lead{font-size:20px;opacity:.88;max-width:36ch;margin:0 0 30px}
+.acoes{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;border-radius:6px;font-weight:600;font-size:17px;text-decoration:none;border:2px solid transparent}
+.btn-1{background:var(--acento);color:#fff}
+.btn-1:hover{background:var(--acento-esc)}
+.btn-2{border-color:currentColor;color:var(--sobre-hero)}
+.btn-2:hover{background:rgba(255,255,255,.12)}
+.cima a:focus-visible{outline-color:#fff}
+
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+.montra-hero{display:flex;justify-content:flex-end}
+.nota{background:var(--papel);color:var(--tinta);border-radius:12px;padding:26px 26px 24px;display:flex;flex-direction:column;justify-content:center;max-width:250px}
+.nota .num{font-family:var(--display);font-weight:700;font-size:76px;line-height:.9}
+.nota .num span{font-size:38px;color:#B07A12;vertical-align:.35em;margin-left:4px}
+.nota p{margin:10px 0 14px;color:var(--suave);font-size:16px;line-height:1.4}
+.nota a{font-weight:600;font-size:15px}
+
+section{padding:76px 0}
+h2{font-weight:700;font-size:clamp(38px,4.4vw,56px);line-height:1.05;letter-spacing:0;margin-bottom:12px}
+.intro{color:var(--suave);max-width:54ch;margin:0 0 36px;font-size:18px}
+
+.servicos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.servicos li{background:#fff;border:1px solid var(--linha);border-left:5px solid var(--acento);border-radius:10px;padding:18px 20px;font-weight:600;font-size:18px}
+.criticas{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.criticas figure{margin:0;background:#fff;border:1px solid var(--linha);border-radius:12px;padding:24px}
+.criticas blockquote{margin:0 0 14px;font-size:18px;line-height:1.5}
+.criticas figcaption{color:var(--suave);font-size:15px}
+.estrelas{color:#B07A12;letter-spacing:2px;margin-bottom:8px}
+@media (max-width:860px){.criticas{grid-template-columns:1fr}}
+.confianca{display:flex;flex-wrap:wrap;gap:8px 18px;margin:-12px 0 28px;font-size:15px;opacity:.9}
+.confianca span::before{content:"✓ ";color:#F3D27A;font-weight:700}
+.servicos li small{display:block;font-weight:400;color:var(--suave);font-size:15px;margin-top:6px;line-height:1.45}
+.passos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:p}
+.passos li{counter-increment:p;background:#fff;border:1px solid var(--linha);border-radius:12px;padding:22px}
+.passos li::before{content:counter(p);display:inline-flex;width:34px;height:34px;border-radius:50%;background:var(--acento);color:#fff;font-weight:700;align-items:center;justify-content:center;margin-bottom:10px}
+.passos b{display:block;font-size:18px;margin-bottom:4px}
+.passos span{color:var(--suave);font-size:15px}
+.final{border:2px dashed var(--acento);border-radius:14px;padding:28px;background:#fff}
+.final ul{margin:12px 0 0;padding-left:20px;columns:2;column-gap:40px}
+.final li{margin-bottom:6px;break-inside:avoid}
+@media (max-width:860px){.passos{grid-template-columns:1fr 1fr}.final ul{columns:1}}
+.luzes{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-bottom:18px}
+.luzes button{font:inherit;font-weight:600;font-size:16px;text-align:left;padding:14px 16px;border-radius:10px;border:2px solid var(--linha);background:#fff;color:var(--tinta);cursor:pointer;display:flex;gap:10px;align-items:center;min-height:56px}
+.luzes button i{flex:none;width:14px;height:14px;border-radius:50%}
+.luzes button[aria-pressed="true"]{border-color:var(--acento);box-shadow:0 0 0 3px rgba(200,32,42,.15)}
+.luzes button:focus-visible,.orc :focus-visible{outline:3px solid var(--acento);outline-offset:2px}
+.amb{background:#E8A317}.verm{background:#D7262E}
+.painel{background:#fff;border:1px solid var(--linha);border-left:6px solid var(--acento);border-radius:12px;padding:22px 24px}
+.painel h3{font-size:28px;margin-bottom:6px}
+.painel .urg{display:inline-block;font-size:14px;font-weight:700;border-radius:20px;padding:3px 12px;margin-bottom:10px}
+.urg.alta{background:#FDE2E3;color:#9B1C22}.urg.media{background:#FFF1D6;color:#7A4E00}
+.painel p{margin:0 0 14px}
+.orc{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;background:#fff;border:1px solid var(--linha);border-radius:14px;padding:26px}
+.orc label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:15px}
+.orc .full{grid-column:1/-1}
+.orc input,.orc select,.orc textarea{font:inherit;font-weight:400;font-size:17px;padding:12px 14px;border:1.5px solid var(--linha);border-radius:8px;background:#fff;color:var(--tinta)}
+.orc textarea{min-height:110px;resize:vertical}
+.orc .nota-orc{color:var(--suave);font-size:14px;margin:0}
+@media (max-width:860px){.orc{grid-template-columns:1fr}}
+
+/* galeria: espaços para as fotos reais */
+.sec-cor{background:var(--fundo-hero);color:var(--sobre-hero)}
+.sec-cor .intro{color:var(--sobre-hero);opacity:.85}
+.galeria{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.foto{aspect-ratio:3/4;border-radius:12px;border:2px dashed rgba(255,255,255,.45);display:flex;align-items:flex-end;padding:14px;font-size:14px;line-height:1.3;
+  background:repeating-linear-gradient(135deg,rgba(255,255,255,.07) 0 10px,transparent 10px 20px)}
+.foto:nth-child(even){transform:translateY(22px)}
+
+.marcar{text-align:center}
+.marcar h2{max-width:18ch;margin:0 auto 14px}
+.marcar .intro{margin:0 auto 28px}
+.marcar .acoes{justify-content:center}
+.marcar .btn-2{color:var(--tinta)}
+.marcar .btn-2:hover{background:rgba(0,0,0,.05)}
+
+.visita{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;border-top:1px solid var(--linha);padding-top:64px}
+.dados dt{font-weight:600;margin-top:16px}
+.dados dd{margin:2px 0 0;color:var(--suave)}
+.mapa{display:flex;flex-direction:column;justify-content:flex-end;min-height:240px;border-radius:12px;padding:26px;background:var(--fundo-hero);color:var(--sobre-hero);text-decoration:none;
+  background-image:linear-gradient(rgba(255,255,255,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.09) 1px,transparent 1px);background-size:30px 30px}
+.mapa span{font-family:var(--display);font-weight:700;font-size:30px;line-height:1.1}
+.mapa small{font-size:15px;opacity:.88;margin-top:6px}
+.mapa:hover{filter:brightness(1.12)}
+
+footer{background:#111820;color:#C9D0D8;padding:30px 0;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+.barra{display:none}
+@media (max-width:860px){
+  .topo nav{display:none}
+  .hero{grid-template-columns:1fr;gap:32px;padding:12px 0 56px}
+  .montra-hero{justify-content:flex-start}
+  .galeria{grid-template-columns:repeat(2,1fr)}
+  .foto:nth-child(even){transform:none}
+  .visita{grid-template-columns:1fr}
+  section{padding:56px 0}
+  .barra{display:flex;position:fixed;left:12px;right:12px;bottom:12px;gap:8px;z-index:10}
+  .barra .btn{flex:1;box-shadow:0 6px 18px rgba(0,0,0,.28)}
+  .barra .btn-2{background:var(--papel);color:var(--tinta);border-color:var(--tinta)}
+  body{padding-bottom:86px}
+}
+</style>
+</head>
+<body>
+
+<div class="demo" role="note"><strong>Rascunho</strong> preparado por Miguel Chaves para a MCARAUTO, só para verem o estilo. Não está publicado.</div>
+
+<div class="cima">
+  <div class="wrap">
+    <header class="topo">
+      <a class="marca" href="#">MCARAUTO</a>
+      <nav aria-label="Principal">
+        <a href="#servicos">Serviços</a>
+        <a href="#criticas">Clientes</a>
+        <a href="#visita">Onde estamos</a>
+      </nav>
+    </header>
+    <main class="hero">
+      <div>
+        <h1>10 anos a cuidar do seu carro.</h1>
+        <p class="lead">Mecânica e eletrónica automóvel em Ermesinde. Diga-nos o que o seu carro tem e respondemos pelo WhatsApp.</p>
+        <div class="confianca"><span>4,4 estrelas em 87 críticas no Google</span><span>10 anos de experiência</span><span>Diagnóstico eletrónico</span></div>
+        <div class="acoes"><a class="btn btn-1" href="https://wa.me/351910127345?text=Ol%C3%A1%20MCARAUTO%2C%20gostava%20de%20pedir%20um%20or%C3%A7amento.">Pedir orçamento pelo WhatsApp</a><a class="btn btn-2" href="tel:+351910127345">Ligar 910 127 345</a></div>
+      </div>
+      <div class="montra-hero">
+        <div class="nota">
+          <div class="num">4,4<span aria-hidden="true">★</span></div>
+          <p>Nota no Google, com 87 avaliações de clientes.</p>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=MCARAUTO%2C%20R.%20do%20Monte%20da%20Bela%20131R%2C%204445-294%20Ermesinde" target="_blank" rel="noopener">Ler as avaliações</a>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<section id="servicos">
+  <div class="wrap">
+    <h2>Tudo o que o seu carro precisa num só lugar</h2>
+    <p class="intro">Do diagnóstico à pintura, tratamos do seu carro sem ter de andar de oficina em oficina.</p>
+    <ul class="servicos">
+      <li>Mecânica<small>Motor, embraiagem, suspensão e travões.</small></li>
+      <li>Manutenção e revisões<small>Óleo, filtros e revisões periódicas para o carro durar mais.</small></li>
+      <li>Eletrónica avançada<small>Diagnóstico por computador quando acende uma luz no painel.</small></li>
+      <li>Soluções para FAP e AdBlue<small>Luz do filtro de partículas ou do AdBlue acesa, ou o carro a perder força.</small></li>
+      <li>Aumento de potência<small>Mais força e resposta do motor.</small></li>
+      <li>Pintura<small>Riscos, toques e pintura de peças.</small></li>
+      <li>Lavagem de estofos<small>Bancos e interior como novos.</small></li>
+    </ul>
+  </div>
+</section>
+
+<section id="como" style="padding-top:0">
+  <div class="wrap">
+    <h2>Como funciona</h2>
+    <p class="intro">Sem surpresas: sabe o que o carro tem e quanto custa antes de começarmos.</p>
+    <ol class="passos">
+      <li><b>Fale connosco</b><span>Por WhatsApp ou telefone, diga-nos o que se passa.</span></li>
+      <li><b>Diagnóstico</b><span>Vemos o carro e encontramos a causa.</span></li>
+      <li><b>Orçamento</b><span>Explicamos o que é preciso e o preço.</span></li>
+      <li><b>Reparação</b><span>Só avançamos com o seu acordo.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="luzes" style="padding-top:0">
+  <div class="wrap">
+    <h2>Acendeu uma luz no painel?</h2>
+    <p class="intro">Toque na luz que lhe apareceu para ver o que pode ser e se deve parar já.</p>
+    <div class="luzes" role="group" aria-label="Luzes do painel">
+      <button type="button" data-luz="motor"><i class="amb"></i>Motor</button>
+      <button type="button" data-luz="fap"><i class="amb"></i>Filtro de partículas (FAP)</button>
+      <button type="button" data-luz="adblue"><i class="amb"></i>AdBlue</button>
+      <button type="button" data-luz="velas"><i class="amb"></i>Pré-aquecimento</button>
+      <button type="button" data-luz="travoes"><i class="verm"></i>Travões</button>
+      <button type="button" data-luz="bateria"><i class="verm"></i>Bateria</button>
+      <button type="button" data-luz="oleo"><i class="verm"></i>Pressão do óleo</button>
+    </div>
+    <div class="painel" id="painel-luz" aria-live="polite">
+      <h3>Escolha uma luz</h3>
+      <p>Explicamos o que costuma querer dizer e o que deve fazer até chegar à oficina.</p>
+    </div>
+  </div>
+</section>
+
+<section id="orcamento" style="padding-top:0">
+  <div class="wrap">
+    <h2>Peça um orçamento</h2>
+    <p class="intro">Preencha em 30 segundos. Abre o WhatsApp com a mensagem pronta, e pode juntar fotos do carro.</p>
+    <form class="orc" id="form-orc">
+      <label>Serviço
+        <select name="servico">
+          <option>Não sei, preciso de diagnóstico</option>
+          <option>Mecânica</option>
+          <option>Manutenção / revisão</option>
+          <option>Eletrónica</option>
+          <option>FAP ou AdBlue</option>
+          <option>Aumento de potência</option>
+          <option>Pintura</option>
+          <option>Lavagem de estofos</option>
+        </select>
+      </label>
+      <label>Marca e modelo
+        <input name="carro" placeholder="Ex.: Renault Mégane" autocomplete="off">
+      </label>
+      <label>Ano
+        <input name="ano" inputmode="numeric" placeholder="Ex.: 2016" maxlength="4">
+      </label>
+      <label>O seu nome
+        <input name="nome" autocomplete="given-name">
+      </label>
+      <label class="full">O que se passa com o carro?
+        <textarea name="problema" placeholder="Ex.: acendeu a luz do motor e perde força a subir"></textarea>
+      </label>
+      <div class="full"><button class="btn btn-1" type="submit" style="border:0;cursor:pointer;font-family:inherit">Enviar pelo WhatsApp</button></div>
+      <p class="nota-orc full">Os dados vão só para o WhatsApp da oficina. Nada fica guardado no site.</p>
+    </form>
+  </div>
+</section>
+
+<section id="criticas" style="padding-top:0">
+  <div class="wrap">
+    <h2>O que dizem os clientes</h2>
+    <p class="intro">Algumas das críticas que nos deixaram no Google.</p>
+    <div class="criticas">
+      <figure><div class="estrelas" aria-hidden="true">★★★★★</div><blockquote>"Confiança, bons preços, rapidez e muito simpáticos."</blockquote><figcaption>Cliente no Google</figcaption></figure>
+      <figure><div class="estrelas" aria-hidden="true">★★★★★</div><blockquote>"Toda a comunicação e gestão de expectativas foi muito transparente."</blockquote><figcaption>Cliente no Google</figcaption></figure>
+      <figure><div class="estrelas" aria-hidden="true">★★★★★</div><blockquote>"Todas as minhas revisões são feitas na Mcar auto, diagnósticos, etc. Bom atendimento, bons preços."</blockquote><figcaption>José Pedro Silva, no Google</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="trabalhos" class="sec-cor">
+  <div class="wrap">
+    <h2>A nossa oficina</h2>
+    <p class="intro">Aqui entram as vossas fotografias: a oficina, os trabalhos e a equipa.</p>
+    <div class="galeria">
+      <div class="foto">A fachada da oficina</div>
+      <div class="foto">Um trabalho vosso</div>
+      <div class="foto">Diagnóstico eletrónico</div>
+      <div class="foto">A equipa</div>
+    </div>
+  </div>
+</section>
+
+<section class="marcar">
+  <div class="wrap">
+    <h2>O seu carro precisa de atenção?</h2>
+    <p class="intro">Mande-nos uma mensagem com o problema ou o serviço que quer fazer. Respondemos assim que pudermos.</p>
+    <div class="acoes"><a class="btn btn-1" href="https://wa.me/351910127345?text=Ol%C3%A1%20MCARAUTO%2C%20gostava%20de%20pedir%20um%20or%C3%A7amento.">Pedir orçamento pelo WhatsApp</a><a class="btn btn-2" href="tel:+351910127345">Ligar 910 127 345</a></div>
+  </div>
+</section>
+
+<section id="versao-final" style="padding-top:0">
+  <div class="wrap">
+    <div class="final">
+      <h2 style="font-size:clamp(30px,3.6vw,42px)">O que entra na versão final</h2>
+      <p class="intro" style="margin-bottom:0">Este rascunho mostra só o estilo. O site a sério leva:</p>
+      <ul>
+        <li>O vosso domínio (por exemplo, mcarauto.pt) e email profissional</li>
+        <li>As vossas fotos: oficina, equipa e trabalhos feitos</li>
+        <li>Horário completo, igual ao do Google</li>
+        <li>Uma página por serviço, para aparecerem a quem pesquisa "FAP Ermesinde" ou "aumento de potência Valongo"</li>
+        <li>Marcação online e lembrete da próxima revisão e inspeção</li>
+        <li>Galeria antes e depois da pintura e dos estofos</li>
+        <li>Perguntas frequentes e garantia dos trabalhos</li>
+        <li>Mapa, ligação à ficha do Google e às vossas redes sociais</li>
+        <li>Preparado para aparecer no Google (SEO local)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="visita" style="padding-top:0">
+  <div class="wrap visita">
+    <div>
+      <h2>Onde estamos</h2>
+      <dl class="dados">
+        <dt>Morada</dt><dd>R. do Monte da Bela 131R, 4445-294 Ermesinde</dd>
+        <dt>Telefone</dt><dd><a href="tel:+351910127345">910 127 345</a></dd>
+        <dt>Horário</dt><dd>Abre às 9h. O horário completo entra aqui.</dd>
+      </dl>
+    </div>
+    <a class="mapa" href="https://www.google.com/maps/search/?api=1&amp;query=MCARAUTO%2C%20R.%20do%20Monte%20da%20Bela%20131R%2C%204445-294%20Ermesinde" target="_blank" rel="noopener">
+      <span>Ver no Google Maps</span>
+      <small>R. do Monte da Bela 131R, Ermesinde</small>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 MCARAUTO · <a href="https://www.facebook.com/miguel.mcarauto/" style="color:#C9D0D8">Facebook</a></span>
+    <span>Site de demonstração por Miguel Chaves</span>
+  </div>
+</footer>
+
+<div class="barra"><a class="btn btn-1" href="https://wa.me/351910127345?text=Ol%C3%A1%20MCARAUTO%2C%20gostava%20de%20pedir%20um%20or%C3%A7amento.">WhatsApp</a><a class="btn btn-2" href="tel:+351910127345">Ligar</a></div>
+
+<script>
+(function(){
+  var WA='351910127345';
+  function wa(t){return 'https://wa.me/'+WA+'?text='+encodeURIComponent(t);}
+  var L={
+    motor:{t:'Luz do motor',u:['media','Pode continuar com cuidado'],d:'Indica um problema no motor ou nas emissões, detetado pela eletrónica do carro. Se estiver a piscar, ou o carro perder força, pare assim que puder: pode estragar o catalisador.'},
+    fap:{t:'Filtro de partículas (FAP)',u:['media','Trate nos próximos dias'],d:'O filtro está a ficar cheio. Às vezes limpa-se sozinho com uns quilómetros em estrada a velocidade constante. Se a luz continuar acesa ou o carro perder força, é preciso tratar antes que o filtro fique entupido.'},
+    adblue:{t:'AdBlue',u:['media','Não deixe para depois'],d:'O nível de AdBlue está baixo ou há uma avaria no sistema. Muitos carros avisam quantos quilómetros faltam até deixarem de arrancar. Se atestar e a luz não apagar, é avaria.'},
+    velas:{t:'Pré-aquecimento (gasóleo)',u:['media','Trate nos próximos dias'],d:'Acesa uns segundos ao ligar o carro é normal. Se piscar com o carro a andar, há uma avaria no motor ou na injeção que deve ser diagnosticada.'},
+    travoes:{t:'Travões',u:['alta','Pare e verifique'],d:'Confirme se o travão de mão está bem solto. Se continuar acesa, pode ser falta de óleo dos travões ou pastilhas gastas. Não arrisque: os travões não esperam.'},
+    bateria:{t:'Bateria',u:['alta','Pare em segurança'],d:'O carro não está a carregar a bateria, muitas vezes por causa do alternador ou da correia. O carro pode ir abaixo a qualquer momento. Desligue o que não precisa e venha diretamente à oficina, ou ligue-nos.'},
+    oleo:{t:'Pressão do óleo',u:['alta','Desligue o motor já'],d:'O motor está sem pressão de óleo. Continuar a andar pode estragar o motor em poucos minutos. Desligue, verifique o nível do óleo e não volte a ligar sem falar connosco.'}
+  };
+  var p=document.getElementById('painel-luz');
+  document.querySelectorAll('[data-luz]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var x=L[b.dataset.luz];
+      document.querySelectorAll('[data-luz]').forEach(function(o){o.setAttribute('aria-pressed',o===b?'true':'false');});
+      p.innerHTML='<h3>'+x.t+'</h3><span class="urg '+x.u[0]+'">'+x.u[1]+'</span><p>'+x.d+'</p>'+
+        '<a class="btn btn-1" href="'+wa('Olá MCARAUTO, acendeu-me a luz: '+x.t+'. Podem ajudar?')+'">Pedir ajuda pelo WhatsApp</a>';
+    });
+  });
+  document.getElementById('form-orc').addEventListener('submit',function(e){
+    e.preventDefault();
+    var f=e.target, v=function(n){return (f[n].value||'').trim();};
+    var t='Olá MCARAUTO, gostava de pedir um orçamento.\n\nServiço: '+v('servico')+
+      (v('carro')?'\nCarro: '+v('carro'):'')+(v('ano')?' ('+v('ano')+')':'')+
+      (v('problema')?'\nO que se passa: '+v('problema'):'')+(v('nome')?'\n\n'+v('nome'):'');
+    window.location.href=wa(t);
+  });
+})();
+</script>
+</body>
+</html>
